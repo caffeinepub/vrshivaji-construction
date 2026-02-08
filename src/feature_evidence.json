@@ -1,0 +1,115 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-multi-section-marketing-website-for-vrshivaji-construction-that-clearly-showcases-the-business-its-services-and-what-it-offers-with-responsive-layouts-for-mobile-tablet-desktop",
+      "featureTitle": "Create a multi-section marketing website for “VRShivaji Construction” that clearly showcases the business, its services, and what it offers, with responsive layouts for mobile/tablet/desktop.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/layout/Section.tsx",
+        "frontend/src/components/layout/SiteFooter.tsx",
+        "frontend/src/components/layout/SiteHeader.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-core-website-pages-sections-in-english-home-hero-highlights-services-service-list-with-short-descriptions-why-choose-us-differentiators-projects-portfolio-example-project-cards-about-company-overview-and-contact-address-phone-email-placeholders-inquiry-form",
+      "featureTitle": "Implement core website pages/sections in English: Home (hero + highlights), Services (service list with short descriptions), Why Choose Us (differentiators), Projects/Portfolio (example project cards), About (company overview), and Contact (address/phone/email placeholders + inquiry form).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/sections/AboutSection.tsx",
+        "frontend/src/components/sections/ContactSection.tsx",
+        "frontend/src/components/sections/HomeHero.tsx",
+        "frontend/src/components/sections/ProjectsSection.tsx",
+        "frontend/src/components/sections/ServicesSection.tsx",
+        "frontend/src/components/sections/WhyChooseUsSection.tsx",
+        "frontend/src/content/marketingContent.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-an-inquiry-submission-flow-the-contact-form-should-validate-required-fields-submit-to-the-backend-canister-and-show-success-error-states",
+      "featureTitle": "Add an inquiry submission flow: the Contact form should validate required fields, submit to the backend canister, and show success/error states.",
+      "files": [
+        "frontend/src/components/sections/ContactSection.tsx",
+        "frontend/src/hooks/useSubmitInquiry.ts",
+        "frontend/src/utils/validation.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-single-coherent-professional-construction-visual-theme-across-the-site-colors-typography-spacing-and-components-using-a-distinctive-style-that-is-not-blue-purple",
+      "featureTitle": "Apply a single coherent “professional construction” visual theme across the site (colors, typography, spacing, and components) using a distinctive style that is not blue/purple.",
+      "files": [
+        "frontend/src/components/layout/Section.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-static-brand-visuals-generated-assets-and-use-them-in-the-ui-a-logo-and-a-hero-image-illustration-suitable-for-a-construction-company",
+      "featureTitle": "Add static brand visuals (generated assets) and use them in the UI: a logo and a hero image/illustration suitable for a construction company.",
+      "files": [
+        "frontend/src/components/layout/SiteHeader.tsx",
+        "frontend/src/components/sections/HomeHero.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

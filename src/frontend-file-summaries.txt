@@ -1,0 +1,18 @@
+{
+  "frontend/src/index.css": "Global styles with construction-themed OKLCH color system (charcoal, sand, safety orange) and typography configuration for both light and dark modes.",
+  "frontend/tailwind.config.js": "Tailwind configuration extended with construction theme colors, custom container padding, and shadow utilities.",
+  "frontend/src/App.tsx": "Main application component rendering the single-page marketing site with header, all sections, and footer.",
+  "frontend/src/components/layout/SiteHeader.tsx": "Sticky header with logo, navigation menu, and mobile-responsive hamburger menu with smooth scroll to sections.",
+  "frontend/src/components/layout/SiteFooter.tsx": "Footer component with company info, quick links, services list, contact details, and attribution.",
+  "frontend/src/components/layout/Section.tsx": "Reusable section wrapper component providing consistent spacing, container, and optional muted background variant.",
+  "frontend/src/components/sections/HomeHero.tsx": "Hero section with background image, value proposition, key benefits, and call-to-action buttons.",
+  "frontend/src/components/sections/ServicesSection.tsx": "Services showcase displaying 6 construction services in a responsive card grid with icons.",
+  "frontend/src/components/sections/WhyChooseUsSection.tsx": "Differentiators section highlighting 6 reasons to choose VRShivaji Construction with icons and descriptions.",
+  "frontend/src/components/sections/ProjectsSection.tsx": "Portfolio section displaying project cards in a responsive grid with type badges and descriptions.",
+  "frontend/src/components/sections/AboutSection.tsx": "About section with company overview, mission, vision, and service area information in two-column layout.",
+  "frontend/src/components/sections/ContactSection.tsx": "Contact section with information cards and validated inquiry form connected to backend with loading/success/error states.",
+  "frontend/src/hooks/useSubmitInquiry.ts": "React Query mutation hook for submitting contact inquiries to the backend canister.",
+  "frontend/src/utils/validation.ts": "Form validation utility with user-friendly error messages for inquiry form fields.",
+  "frontend/src/content/marketingContent.ts": "Marketing content data including services, differentiators, and project portfolio information.",
+  "frontend/src/lib/utils.ts": "Utility function for merging Tailwind CSS classes using clsx and tailwind-merge."
+}

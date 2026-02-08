@@ -1,0 +1,82 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-08T06:58:54.700Z",
+  "summary": "Frontend implements a multi-section, responsive marketing site with header navigation, hero, services (6 items), differentiators, projects, about, and contact sections plus a submission hook and validation. Backend adds an inquiry submission method and an admin-only inquiry listing method, but it does not meet stable-storage and data-shape requirements for inquiries, and the frontend inquiry flow does not satisfy the required “Email (or Phone)” validation or include phone in submission.",
+  "missing_requirements": [
+    {
+      "id": "REQ-3",
+      "requirement": "Client-side validation must block submission when Name, Email (or Phone), and Message are empty; and Contact form must include fields Name, Phone, Email, Message.",
+      "reason": "Validation requires email unconditionally (not “email or phone”), and phone is not considered for validation. Also, the submission payload excludes phone entirely even though the form state includes it.",
+      "evidence": [
+        "frontend/src/utils/validation.ts",
+        "frontend/src/components/sections/ContactSection.tsx",
+        "frontend/src/hooks/useSubmitInquiry.ts"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "requirement": "Backend inquiry type must include at least: id, name, email, phone (optional), message, createdAt timestamp; persist inquiries across upgrades using stable storage patterns; provide a query method to list stored inquiries.",
+      "reason": "Inquiry type lacks phone and uses field name `timestamp` rather than `createdAt`. Storage uses `Map.empty` and `var nextId` without any stable variables or upgrade hooks (no stable-memory persistence shown).",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Admin authorization system and secret-token-based access-control initialization (including admin-only inquiry listing).",
+      "reason": "BuildRequest did not ask for authorization, admin tokens, or restricting the inquiry list to admins; it only requested a list method for future admin use.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/hooks/useActor.ts",
+        "frontend/src/utils/urlParams.ts"
+      ]
+    },
+    {
+      "description": "User profile management endpoints (get/save user profiles) and permission checks.",
+      "reason": "BuildRequest does not mention user profiles or user permissions.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Internet Identity provider/login plumbing added even though authentication was not required for this request.",
+      "reason": "BuildRequest states II is allowed if needed, but authentication is explicitly “not required for this request”; the diff adds II context/provider and identity-based actor behavior.",
+      "evidence": [
+        "frontend/src/hooks/useInternetIdentity.ts",
+        "frontend/src/main.tsx",
+        "frontend/src/hooks/useActor.ts"
+      ]
+    }
+  ],
+  "confidence": 0.74,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/layout/Section.tsx",
+    "frontend/src/components/layout/SiteFooter.tsx",
+    "frontend/src/components/layout/SiteHeader.tsx",
+    "frontend/src/components/sections/AboutSection.tsx",
+    "frontend/src/components/sections/ContactSection.tsx",
+    "frontend/src/components/sections/HomeHero.tsx",
+    "frontend/src/components/sections/ProjectsSection.tsx",
+    "frontend/src/components/sections/ServicesSection.tsx",
+    "frontend/src/components/sections/WhyChooseUsSection.tsx",
+    "frontend/src/content/marketingContent.ts",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useSubmitInquiry.ts",
+    "frontend/src/index.css",
+    "frontend/src/lib/utils.ts",
+    "frontend/src/main.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/src/utils/validation.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

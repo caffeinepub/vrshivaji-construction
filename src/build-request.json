@@ -1,0 +1,148 @@
+{
+  "kind": "build_request",
+  "title": "Professional VRShivaji Construction marketing website (services + offerings)",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a multi-section marketing website for “VRShivaji Construction” that clearly showcases the business, its services, and what it offers, with responsive layouts for mobile/tablet/desktop.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a professional vrshivaji construction website for a business that showcases our services and what we offer."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Landing experience includes clear business name “VRShivaji Construction” and a concise value proposition in English.",
+        "Site is responsive and readable on mobile, tablet, and desktop.",
+        "Navigation allows users to reach Services and Contact sections within 1 click."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Implement core website pages/sections in English: Home (hero + highlights), Services (service list with short descriptions), Why Choose Us (differentiators), Projects/Portfolio (example project cards), About (company overview), and Contact (address/phone/email placeholders + inquiry form).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a professional vrshivaji construction website for a business that showcases our services and what we offer."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Home includes hero, service highlights, and clear calls-to-action (e.g., “Request a Quote”, “View Services”).",
+        "Services section/page renders at least 6 services with titles and short descriptions.",
+        "Projects/Portfolio displays a grid/list of project cards (can use sample data initially).",
+        "Contact section/page includes an inquiry form with fields: Name, Phone, Email, Message."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add an inquiry submission flow: the Contact form should validate required fields, submit to the backend canister, and show success/error states.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a professional vrshivaji construction website for a business that showcases our services and what we offer."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Client-side validation blocks submission when Name, Email (or Phone), and Message are empty.",
+        "On submit, the frontend calls a backend method to store the inquiry.",
+        "UI shows a loading state during submission and a clear success message when stored.",
+        "UI shows a clear error message if the backend call fails."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Backend: store contact inquiries in stable memory with timestamp and provide a read method for retrieving inquiries (for future admin use).",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a professional vrshivaji construction website for a business that showcases our services and what we offer."
+        ]
+      },
+      "acceptanceCriteria": [
+        "A backend type exists for an Inquiry containing at least: id, name, email, phone (optional), message, createdAt timestamp.",
+        "There is an update method to create/store an inquiry and return the created record or id.",
+        "There is a query method to list stored inquiries (can be simple, e.g., most recent first).",
+        "Data persists across canister upgrades using stable storage patterns appropriate for Motoko."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Apply a single coherent “professional construction” visual theme across the site (colors, typography, spacing, and components) using a distinctive style that is not blue/purple.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Theme uses a consistent palette (e.g., charcoal/graphite, warm sand, and safety orange accents) and consistent typography scale.",
+        "Buttons, cards, headings, and section spacing feel consistent across all pages/sections.",
+        "No default-template look: hero, sections, and cards have deliberate styling and hierarchy."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Add static brand visuals (generated assets) and use them in the UI: a logo and a hero image/illustration suitable for a construction company.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Create a professional vrshivaji construction website for a business that showcases our services and what we offer."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Generated images are placed in frontend/public/assets/generated and are referenced directly by the frontend.",
+        "Header displays the logo with the text “VRShivaji Construction”.",
+        "Home hero section displays the hero image with proper responsive behavior (no distortion, reasonable cropping)."
+      ]
+    }
+  ],
+  "constraints": [
+    "Use English for all user-facing text.",
+    "Backend must remain a single Motoko actor (no additional backend services).",
+    "Do not edit any files under frontend/src/components/ui or any paths listed as immutable in SYSTEM_CONTEXT (compose them instead).",
+    "Do not add third-party authentication; only Internet Identity is allowed if authentication is needed (not required for this request)."
+  ],
+  "nonGoals": [
+    "Do not implement payments, invoicing, or e-commerce checkout.",
+    "Do not implement real-time chat, push notifications, or email/SMS delivery integrations.",
+    "Do not build a full admin dashboard (beyond providing a backend list method for inquiries)."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Construction company wordmark logo, clean geometric style, dark charcoal with safety-orange accent (vrshivaji-logo.dim_512x512.png)",
+      "Wide hero banner image/illustration of a modern construction site with subtle gradient overlay, professional and minimal (construction-hero.dim_1600x900.png)"
+    ],
+    "edits": []
+  },
+  "userProfileUpdate": {
+    "goalsToAdd": [
+      "Build a professional marketing website for VRShivaji Construction that showcases services and offerings and captures customer inquiries."
+    ],
+    "goalsToRemove": [],
+    "preferencesToAdd": [
+      "All user-facing text should be in English.",
+      "Prefer a professional construction visual theme (charcoal/sand/orange), not blue/purple."
+    ],
+    "preferencesToRemove": [],
+    "miscToAdd": [],
+    "miscToRemove": [],
+    "fieldsToSet": {},
+    "fieldsToDelete": []
+  }
+}

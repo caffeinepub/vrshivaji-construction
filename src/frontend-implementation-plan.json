@@ -1,0 +1,174 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "VRShivaji Construction marketing website (responsive sections + inquiry form)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Build a responsive multi-section marketing site with clear navigation to Services and Contact within one click.",
+      "acceptanceCriteria": [
+        "Landing experience includes clear business name “VRShivaji Construction” and a concise value proposition in English.",
+        "Site is responsive and readable on mobile, tablet, and desktop.",
+        "Navigation allows users to reach Services and Contact sections within 1 click."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the primary single-page marketing layout with a header navigation (anchor links) that reaches Services and Contact within 1 click, and render the required sections in a responsive structure."
+        },
+        {
+          "path": "frontend/src/components/layout/SiteHeader.tsx",
+          "operation": "create",
+          "description": "Create a responsive header with desktop and mobile navigation (anchors to sections). Use shadcn-ui navigation primitives as appropriate (e.g., Button) while composing without modifying frontend/src/components/ui. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/layout/SiteFooter.tsx",
+          "operation": "create",
+          "description": "Create a footer with basic business/placeholder details and quick links to Services and Contact anchors for 1-click access."
+        },
+        {
+          "path": "frontend/src/components/layout/Section.tsx",
+          "operation": "create",
+          "description": "Create a reusable Section wrapper (container + spacing + section heading pattern) to ensure consistent responsive spacing and hierarchy across the site."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Implement Home, Services, Why Choose Us, Projects/Portfolio, About, and Contact sections in English with required content and sample data.",
+      "acceptanceCriteria": [
+        "Home includes hero, service highlights, and clear calls-to-action (e.g., “Request a Quote”, “View Services”).",
+        "Services section/page renders at least 6 services with titles and short descriptions.",
+        "Projects/Portfolio displays a grid/list of project cards (can use sample data initially).",
+        "Contact section/page includes an inquiry form with fields: Name, Phone, Email, Message."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/content/marketingContent.ts",
+          "operation": "create",
+          "description": "Add English copy and sample data (value proposition, at least 6 services, differentiators, and portfolio project card data) used by the marketing sections."
+        },
+        {
+          "path": "frontend/src/components/sections/HomeHero.tsx",
+          "operation": "create",
+          "description": "Implement the Home hero section with value proposition, calls-to-action (scroll to Services and Contact), and hero media placement."
+        },
+        {
+          "path": "frontend/src/components/sections/ServicesSection.tsx",
+          "operation": "create",
+          "description": "Implement Services section rendering at least 6 services with titles and short descriptions. Use shadcn-ui Card (composed, not modified) for service tiles. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/WhyChooseUsSection.tsx",
+          "operation": "create",
+          "description": "Implement Why Choose Us section listing differentiators (quality, timelines, safety, transparency, etc.) with consistent styling and layout."
+        },
+        {
+          "path": "frontend/src/components/sections/ProjectsSection.tsx",
+          "operation": "create",
+          "description": "Implement Projects/Portfolio section with a responsive grid of example project cards from sample data. Use shadcn-ui Card (composed, not modified). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/sections/AboutSection.tsx",
+          "operation": "create",
+          "description": "Implement About section with company overview, mission, and service area placeholders in English."
+        },
+        {
+          "path": "frontend/src/components/sections/ContactSection.tsx",
+          "operation": "create",
+          "description": "Implement Contact section containing address/phone/email placeholders plus an inquiry form with fields Name, Phone, Email, Message. Use shadcn-ui Input/Textarea/Button/Label (composed, not modified). Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wire all sections into the main page in the required order and ensure each section has stable anchor ids (e.g., services, projects, about, contact) for navigation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add validated contact inquiry submission that calls the backend canister and shows loading/success/error UI states.",
+      "acceptanceCriteria": [
+        "Client-side validation blocks submission when Name, Email (or Phone), and Message are empty.",
+        "On submit, the frontend calls a backend method to store the inquiry.",
+        "UI shows a loading state during submission and a clear success message when stored.",
+        "UI shows a clear error message if the backend call fails."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useSubmitInquiry.ts",
+          "operation": "create",
+          "description": "Create a React Query mutation hook that uses the existing actor wiring (useActor) to call the backend capability submitInquiry, and exposes loading/success/error state for the contact form."
+        },
+        {
+          "path": "frontend/src/components/sections/ContactSection.tsx",
+          "operation": "modify",
+          "description": "Add client-side validation (require Name + Message + (Email or Phone)); on submit call useSubmitInquiry and show loading UI and clear success/error messages. Use shadcn-ui form controls and feedback components (e.g., Button, Alert) via composition without modifying frontend/src/components/ui. Verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/utils/validation.ts",
+          "operation": "create",
+          "description": "Add shared validation helpers for the inquiry form (required field checks and user-friendly English error messages) to keep UI logic consistent and testable."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Apply a coherent professional construction theme (charcoal/sand/orange accents) with consistent typography and spacing across the site.",
+      "acceptanceCriteria": [
+        "Theme uses a consistent palette (e.g., charcoal/graphite, warm sand, and safety orange accents) and consistent typography scale.",
+        "Buttons, cards, headings, and section spacing feel consistent across all pages/sections.",
+        "No default-template look: hero, sections, and cards have deliberate styling and hierarchy."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Create global styles and Tailwind base layers with a charcoal/sand/orange design system via CSS variables (driving shadcn-ui theme tokens) and consistent typography/spacing defaults."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Adjust Tailwind theme extensions (if needed) to support the construction palette and typographic scale (without introducing blue/purple defaults) while keeping usage consistent across sections."
+        },
+        {
+          "path": "frontend/src/components/layout/Section.tsx",
+          "operation": "modify",
+          "description": "Ensure the shared Section wrapper enforces consistent vertical rhythm, headings hierarchy, and responsive spacing to avoid a default-template look."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Add generated logo and hero image assets and wire them into header and hero section with responsive behavior.",
+      "acceptanceCriteria": [
+        "Generated images are placed in frontend/public/assets/generated and are referenced directly by the frontend.",
+        "Header displays the logo with the text “VRShivaji Construction”.",
+        "Home hero section displays the hero image with proper responsive behavior (no distortion, reasonable cropping)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/generated/vrshivaji-logo.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the generated construction wordmark logo asset at the exact required path for direct frontend referencing."
+        },
+        {
+          "path": "frontend/public/assets/generated/construction-hero.dim_1600x900.png",
+          "operation": "create",
+          "description": "Add the generated wide hero banner asset at the exact required path for direct frontend referencing."
+        },
+        {
+          "path": "frontend/src/components/layout/SiteHeader.tsx",
+          "operation": "modify",
+          "description": "Wire the logo image (frontend/public/assets/generated/vrshivaji-logo.dim_512x512.png) into the header alongside the text “VRShivaji Construction”, ensuring responsive sizing and alignment."
+        },
+        {
+          "path": "frontend/src/components/sections/HomeHero.tsx",
+          "operation": "modify",
+          "description": "Wire the hero image (frontend/public/assets/generated/construction-hero.dim_1600x900.png) into the Home hero with responsive layout behavior (no distortion; reasonable cropping via layout choices)."
+        }
+      ]
+    }
+  ]
+}

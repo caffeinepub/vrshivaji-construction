@@ -1,0 +1,71 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build a professional VRShivaji Construction business website showcasing services and offerings.",
+  "architectural_notes": [],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Construction company wordmark logo, clean geometric style, dark charcoal with safety-orange accent (vrshivaji-logo.dim_512x512.png)\n- Wide hero banner image/illustration of a modern construction site with subtle gradient overlay, professional and minimal (construction-hero.dim_1600x900.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-multi-section-marketing-website-for-vrshivaji-construction-that-clearly-showcases-the-business-its-services-and-what-it-offers-with-responsive-layouts-for-mobile-tablet-desktop",
+      "title": "Create a multi-section marketing website for “VRShivaji Construction” that clearly showcases the business, its services, and what it offers, with responsive layouts for mobile/tablet/desktop.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-core-website-pages-sections-in-english-home-hero-highlights-services-service-list-with-short-descriptions-why-choose-us-differentiators-projects-portfolio-example-project-cards-about-company-overview-and-contact-address-phone-email-placeholders-inquiry-form",
+      "title": "Implement core website pages/sections in English: Home (hero + highlights), Services (service list with short descriptions), Why Choose Us (differentiators), Projects/Portfolio (example project cards), About (company overview), and Contact (address/phone/email placeholders + inquiry form).",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-an-inquiry-submission-flow-the-contact-form-should-validate-required-fields-submit-to-the-backend-canister-and-show-success-error-states",
+      "title": "Add an inquiry submission flow: the Contact form should validate required fields, submit to the backend canister, and show success/error states.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-single-coherent-professional-construction-visual-theme-across-the-site-colors-typography-spacing-and-components-using-a-distinctive-style-that-is-not-blue-purple",
+      "title": "Apply a single coherent “professional construction” visual theme across the site (colors, typography, spacing, and components) using a distinctive style that is not blue/purple.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-static-brand-visuals-generated-assets-and-use-them-in-the-ui-a-logo-and-a-hero-image-illustration-suitable-for-a-construction-company",
+      "title": "Add static brand visuals (generated assets) and use them in the UI: a logo and a hero image/illustration suitable for a construction company.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create a professional VRShivaji Construction business website that showcases services and offerings.",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Backend: store contact inquiries in stable memory with timestamp and provide a read method for retrieving inquiries (for future admin use).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "VRShivaji Construction",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
